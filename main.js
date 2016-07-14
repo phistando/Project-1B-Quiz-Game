@@ -176,7 +176,7 @@ function startGame() {
   timerId = setInterval(draw, 10);
 }
 
-//--------------------------button Spacebar to begin----------------------
+//--------------------------button spacebar to begin----------------------
 
 var pressStart = false;
 
