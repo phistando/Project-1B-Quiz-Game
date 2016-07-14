@@ -1,0 +1,79 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Comic Sans MS;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+body{
+  background-image: url('assets/background2.jpg');
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  color: black;
+  margin: 50;
+  position: relative;
+  top: 20px;
+  font-size: 40px;
+}
+
+#canvas {
+   top:40px;
+   position: relative;
+   background: #b3ccff;
+   opacity: 0.8;
+   display: inline-block;
+   left: 100px;
+   border: 3px solid black;
+}
+
+h2 {
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+p {
+  font-size: 20px;
+}
+
+#playerOne {
+  display: inline-block;
+  float: left;
+  margin: 20px;
+  position: relative;
+  top: 150px;
+  left: 50px;
+  padding: 10px;
+}
+
+#playerTwo {
+  display:inline-block;
+  float: right;
+  margin: 20px;
+  position: relative;
+  top: 150px;
+  right: 30px;
+  padding: 10px;
+
+}
+
+#startText {
+  display: block;
+  font-size: 25px;
+  position: relative;
+  left:510px;
+  top: 55px;
+}
+
+#restart {
+  display: block;
+  font-size: 25px;
+  position: relative;
+  left:480px;
+  top: 60px;
+}
