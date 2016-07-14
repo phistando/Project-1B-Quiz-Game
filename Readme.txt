@@ -17,8 +17,11 @@ Player 2 controls the paddle at the right hand side of the canvas.
 Button ‘O’ for moving paddle up and button ‘L’ for moving paddle down
 
 
-Reference:
-https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript
+References:
+
+1. https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript
+
+2. http://www.simonewebdesign.it/making-a-game-from-scratch-in-html5/
 
 
 --------------------------- Pong Game ---------------------------

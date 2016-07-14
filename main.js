@@ -1,3 +1,6 @@
+//get timer Id
+var timerId = 0;
+
 //define canvas
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
@@ -139,10 +142,14 @@ function draw() {
   }else if
   (x+ballRadius < 0) {
     ctx.fillText("Player 2 wins!",canvas.width/2, canvas.height/2);
+    clearInterval(timerId);
+    $('#restart').toggle();
 
   }else if
   (x-ballRadius > canvas.width) {
     ctx.fillText("Player 1 wins!",canvas.width/2, canvas.height/2);
+    clearInterval(timerId);
+    $('#restart').toggle();
 
   }
 
@@ -166,7 +173,7 @@ else if(playerTwoDownPressed && paddleTwoStart < canvas.height-paddleTwoHeight) 
 }
 
 function startGame() {
-  setInterval(draw, 10);
+  timerId = setInterval(draw, 10);
 }
 
 //--------------------------button Spacebar to begin----------------------
@@ -183,6 +190,7 @@ function pressStartDownHandler(e) {
     }
     if(pressStart) {
       startGame();
+
       $('#startText').toggle();
     }
   }
@@ -209,6 +217,7 @@ function pressStartDownHandler(e) {
         }
         if(pressEnter) {
           location.reload();
+          clearInterval(timerId);
         }
       }
 

@@ -71,7 +71,7 @@ p {
 }
 
 #restart {
-  display: block;
+  display: none;
   font-size: 25px;
   position: relative;
   left:480px;
