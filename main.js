@@ -1,5 +1,3 @@
-//get timer Id
-var timerId = 0;
 
 //define canvas
 var canvas = document.getElementById("canvas");
@@ -14,34 +12,6 @@ var ballRadius = 10;
 var dx = 4;
 var dy = 4;
 
-//define variables for player One paddle (height/width/start)
-var paddleOneHeight = 70;
-var paddleOneWidth = 15;
-var paddleOneStart = (canvas.height-paddleOneHeight)/2;
-
-//define variable for player Two paddle (height/width/start)
-var paddleTwoHeight = 70;
-var paddleTwoWidth = 15;
-var paddleTwoStart = (canvas.height-paddleTwoHeight)/2;
-
-//player One draw paddle function
-function drawPaddleOne() {
-  ctx.beginPath();
-  ctx.rect(0, paddleOneStart, paddleOneWidth, paddleOneHeight);
-  ctx.fillStyle = "#009500";
-  ctx.fill();
-  ctx.closePath();
-}
-
-//player Two draw paddle function
-function drawPaddleTwo() {
-  ctx.beginPath();
-  ctx.rect(canvas.width-paddleTwoWidth, paddleTwoStart, paddleTwoWidth, paddleTwoHeight);
-  ctx.fillStyle = "#950000";
-  ctx.fill();
-  ctx.closePath();
-}
-
 //draw ball function
 function drawBall() {
 ctx.beginPath();
@@ -53,6 +23,37 @@ x += dx;
 y += dy;
 }
 
+
+//define variables for player One paddle (height/width/start)
+var paddleOneHeight = 70;
+var paddleOneWidth = 15;
+var paddleOneStart = (canvas.height-paddleOneHeight)/2;
+
+//player One draw paddle function
+function drawPaddleOne() {
+  ctx.beginPath();
+  ctx.rect(0, paddleOneStart, paddleOneWidth, paddleOneHeight);
+  ctx.fillStyle = "#009500";
+  ctx.fill();
+  ctx.closePath();
+}
+
+//define variable for player Two paddle (height/width/start)
+var paddleTwoHeight = 70;
+var paddleTwoWidth = 15;
+var paddleTwoStart = (canvas.height-paddleTwoHeight)/2;
+
+//player Two draw paddle function
+function drawPaddleTwo() {
+  ctx.beginPath();
+  ctx.rect(canvas.width-paddleTwoWidth, paddleTwoStart, paddleTwoWidth, paddleTwoHeight);
+  ctx.fillStyle = "#950000";
+  ctx.fill();
+  ctx.closePath();
+}
+
+
+
 //--------------------Player 1 control button-----------------------//
 
 //define variables for player One control buttons
@@ -60,8 +61,8 @@ var playerOneUpPressed = false;
 var playerOneDownPressed = false;
 
 //add event listener for player One control buttons
-document.addEventListener("keydown", playerOneKeyDownHandler, false);
-document.addEventListener("keyup", playerOneKeyUpHandler, false);
+document.addEventListener("keydown", playerOneKeyDownHandler);
+document.addEventListener("keyup", playerOneKeyUpHandler);
 
 
 //define functions for player One key handlers
@@ -90,8 +91,8 @@ var playerTwoUpPressed = false;
 var playerTwoDownPressed = false;
 
 //add event listener for player Two control buttons
-document.addEventListener("keydown", playerTwoKeyDownHandler, false);
-document.addEventListener("keyup", playerTwoKeyUpHandler, false);
+document.addEventListener("keydown", playerTwoKeyDownHandler);
+document.addEventListener("keyup", playerTwoKeyUpHandler);
 
 
 //define functions for player Two key handlers
@@ -172,17 +173,25 @@ else if(playerTwoDownPressed && paddleTwoStart < canvas.height-paddleTwoHeight) 
   }
 }
 
+
+//----funtion to start the game by activating the draw function in setInterval
+
+var timerId;
+
 function startGame() {
   timerId = setInterval(draw, 10);
+
 }
+
+
 
 //--------------------------button spacebar to begin----------------------
 
 var pressStart = false;
 
 
-document.addEventListener("keydown", pressStartDownHandler, false);
-document.addEventListener("keyup", pressStartUpHandler, false);
+document.addEventListener("keydown", pressStartDownHandler);
+document.addEventListener("keyup", pressStartUpHandler);
 
 function pressStartDownHandler(e) {
     if(e.keyCode == 32) {
@@ -208,8 +217,8 @@ function pressStartDownHandler(e) {
     var pressEnter = false;
 
 
-    document.addEventListener("keydown", pressEnterDownHandler, false);
-    document.addEventListener("keyup", pressEnterUpHandler, false);
+    document.addEventListener("keydown", pressEnterDownHandler);
+    document.addEventListener("keyup", pressEnterUpHandler);
 
     function pressEnterDownHandler(e) {
         if(e.keyCode == 13) {
